@@ -9,6 +9,7 @@ import HomePage from './HomePage';
 import Foco from './Foco';
 import Title from './Title';
 import Games from './Games';
+import Ceevee from './Ceevee';
 
 
 
@@ -42,6 +43,13 @@ export default function Home() {
             buttonOne: "SELECT",
             buttonTwo: "START",
             buttonThree: "three"
+        },
+        {
+            id: 3,
+            title: "ceevee",
+            buttonOne: "DL Resume",
+            buttonTwo: "reel",
+            buttonThree: "themechange",
         }
     ]
 
@@ -88,6 +96,7 @@ export default function Home() {
                 <div onClick={()=>updateContent(0)}>{contentList[0].title}</div>
                 <div onClick={()=>updateContent(1)}>{contentList[1].title}</div>
                 <div onClick={()=>updateContent(2)}>{contentList[2].title}</div>
+                <div onClick={()=>updateContent(3)}>{contentList[3].title}</div>
             </div>
         )
     }
@@ -105,6 +114,7 @@ export default function Home() {
                     {content === 0 && <HomePage />}
                     {content === 1 && <Foco />}
                     {content === 2 && <Games channel={channel} setChannel={updateChannel} link={startLink} setLink={updateStartLink} />}
+                    {content === 3 && <Ceevee/>}
                 </div>
             </div>
         </div>

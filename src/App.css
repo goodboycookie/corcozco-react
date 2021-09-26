@@ -5,6 +5,7 @@
 
 }
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;700&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
 
 
 .App{
@@ -151,4 +152,27 @@
 
 .item2{
   grid-row: 4/5;
+}
+
+
+
+.cvli{
+  font-size: 1vw;
+  transition: 1s;
+  margin: auto;
+  position: absolute;
+}
+.seeelvi{
+  font-size: 1vw;
+  color: #fffff0;
+  margin: auto;
+  position: absolute;
+}
+.seeelvi:hover{
+  color: red;
+  cursor: zoom-in;
+}
+.cvli:hover{
+  color: #fffff0;
+  cursor: zoom-in;
 }

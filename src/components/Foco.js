@@ -15,8 +15,8 @@ export default function Foco() {
     var contentData = [
         {
             id: 0,
-            title: "DesktopFOlderset001",
-            content: "I promise I've taken more than five photos. Just pulled some from my desktop to make this work. Promise to add more, but look at this UI! Click n drag:)",
+            title: "Desktop Fotoset001",
+            content: "I promise I've taken more than five photos. Just pulled some from throwaways my desktop to make this carousel work. Will add more,, but check this clean scroll :)",
             boxQuantity: 5,
             active: false,
         },
@@ -75,7 +75,8 @@ export default function Foco() {
         const imgstyle = {
            
             maxHeight: "300px",
-           
+            border: '3px solid #fffff5',
+            borderRadius: '5px',
         }
 
 
@@ -83,7 +84,7 @@ export default function Foco() {
         const spawnImages = (num) => {
             var elements = [];
             imgList.map((img)=>{
-                elements.push(<div class="panel" style={{margin: "0px 10px"}}><img alt="img" src={img} style={imgstyle}/></div>);
+                elements.push(<div class="panel" style={{margin: "0px 5px"}}><img alt="img" src={img} style={imgstyle}/></div>);
                 return 0;
             })
             return elements;
@@ -124,11 +125,11 @@ export default function Foco() {
                 {/* description and see all option */}
                 <h3 className={styles.hiddenContent}>{content}</h3>
                 {/* see all */}
-                <h4 onClick={()=>{setToggleGallery(true)}} id={styles["seeall"]} className={styles.hiddenContent}><i>see all</i></h4>
+                {/* <h4 onClick={()=>{setToggleGallery(true)}} id={styles["seeall"]} className={styles.hiddenContent}><i>see all</i></h4> */}
                 
                 {/* image carousel */}
                 <div className={styles.images}>
-                    <Flicking align="prev" circular={true} style={{border: '2px solid green', margin: "5px 3%", overflow: "scroll"}} onMoveEnd={e => {console.log(e); }}>
+                    <Flicking align="prev" circular={true} style={{margin: "5px 3%", overflow: "auto"}} >
                         {spawnImages(boxQuantity)}
                     </Flicking>
                 </div>

@@ -1,6 +1,6 @@
 .piecediv{
     padding: 5px;
-    max-width: 95%;
+    
     
 }
 .title{
@@ -18,7 +18,7 @@
 }
 
 .titletext:hover{
-    color: blue;
+    color: #fffff4;
     cursor: pointer;
 }
 
@@ -33,7 +33,7 @@
 }
 
 #seeall:hover{
-    color: blue;
+    color: #fffff4;
 }
 
 .arrow{
@@ -43,14 +43,24 @@
     cursor: pointer;
 }
 
-
+.image{
+    user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+}
 
 
 .images{
     align-self: center;
-
+    
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    
     align-items: center;
+}
+
+.images:hover{
+    cursor: grab;
 }

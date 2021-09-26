@@ -34,6 +34,8 @@ export default function HomePage() {
     const [play] = useSound(ilySfx);
     const Changelog = () =>{
         return(
+            <>
+            <h5 style={{color: "red"}}>[back]</h5>
             <div className="bubbleChild">
                 
                     {
@@ -43,8 +45,10 @@ export default function HomePage() {
                             )
                         })
                     }
-                
+                    <br />
+                    
             </div>
+            </>
         )
     }
     // const LastOne = () => {
