@@ -3,6 +3,11 @@ import styles from './Foco.module.css'
 
 import Flicking from "@egjs/react-flicking";
 import "@egjs/react-flicking/dist/flicking.css";
+import image0 from "../assets/images/0/0.JPG";
+import image1 from "../assets/images/0/1.JPG";
+import image2 from "../assets/images/0/2.JPG";
+import image3 from "../assets/images/0/3.JPG";
+import image4 from "../assets/images/0/4.JPG";
 
 export default function Foco() {
 
@@ -10,41 +15,43 @@ export default function Foco() {
     var contentData = [
         {
             id: 0,
-            title: "It's the first of the month",
-            content: "welcome to the zonee",
+            title: "DesktopFOlderset001",
+            content: "I promise I've taken more than five photos. Just pulled some from my desktop to make this work. Promise to add more, but look at this UI! Click n drag:)",
             boxQuantity: 5,
             active: false,
         },
-        {
-            id: 1,
-            title: "u doubted me",
-            content: "but that's okay",
-            boxQuantity: 3,
-            active: false,
-        },
-        {
-            id: 2,
-            title: "It'sasdfadfg the month",
-            content: "welcome to the zonee",
-            boxQuantity: 6,
-            active: false,
-        },
-        {
-            id: 3,
-            title: "It'asdfadsghsirst of the month",
-            content: "welcome to the zonee",
-            boxQuantity: 12,
-            active: false,
-        },
-        {
-            id: 4,
-            title: "It's the asdfasdf of the month",
-            content: "welcome to the zonee",
-            boxQuantity: 0,
-            active: false,
-        }
+        // {
+        //     id: 1,
+        //     title: "u doubted me",
+        //     content: "but that's okay",
+        //     boxQuantity: 3,
+        //     active: false,
+        // },
+        // {
+        //     id: 2,
+        //     title: "It'sasdfadfg the month",
+        //     content: "welcome to the zonee",
+        //     boxQuantity: 6,
+        //     active: false,
+        // },
+        // {
+        //     id: 3,
+        //     title: "It'asdfadsghsirst of the month",
+        //     content: "welcome to the zonee",
+        //     boxQuantity: 12,
+        //     active: false,
+        // },
+        // {
+        //     id: 4,
+        //     title: "It's the asdfasdf of the month",
+        //     content: "welcome to the zonee",
+        //     boxQuantity: 0,
+        //     active: false,
+        // }
     ]
 
+
+    const imgList = [image0, image1, image2, image3, image4];
     
     const [toggleGallery, setToggleGallery] = useState(false);
     
@@ -65,22 +72,20 @@ export default function Foco() {
         const [active, setActive] = useState(isActive);
         const [arrow, setArrow] = useState("downarrow.svg");
 
-
-        //Individual Images
-        const ImageBox = ({content})=>{
-            return(
-                <div style={{backgroundColor: "orange", border: "2px solid black", height: "250px", width: "300px"}}>
-                    hi {content}
-                </div>
-            )
+        const imgstyle = {
+           
+            maxHeight: "300px",
+           
         }
+
 
         //returns a number of div's equal to a section's boxQuantity.
         const spawnImages = (num) => {
             var elements = [];
-            for(var i=1; i<num+1; i++){
-                elements.push(<div class="panel" style={{margin: "0px 10px"}}><ImageBox content={i} /></div>);
-            }
+            imgList.map((img)=>{
+                elements.push(<div class="panel" style={{margin: "0px 10px"}}><img alt="img" src={img} style={imgstyle}/></div>);
+                return 0;
+            })
             return elements;
         }
 
@@ -103,6 +108,7 @@ export default function Foco() {
             // eslint-disable-next-line
         }, [active])
 
+
         return (
             <div className={styles.piecediv} >
 
@@ -118,13 +124,11 @@ export default function Foco() {
                 {/* description and see all option */}
                 <h3 className={styles.hiddenContent}>{content}</h3>
                 {/* see all */}
-                <h4 onClick={()=>{setToggleGallery(true)}} id={styles["seeall"]} className={styles.hiddenContent}>
-                    <i>see all</i>
-                </h4>
+                <h4 onClick={()=>{setToggleGallery(true)}} id={styles["seeall"]} className={styles.hiddenContent}><i>see all</i></h4>
                 
                 {/* image carousel */}
                 <div className={styles.images}>
-                    <Flicking align="prev" circular={false} style={{margin: "5px 3%"}} onMoveEnd={e => {console.log(e); }}>
+                    <Flicking align="prev" circular={true} style={{border: '2px solid green', margin: "5px 3%", overflow: "scroll"}} onMoveEnd={e => {console.log(e); }}>
                         {spawnImages(boxQuantity)}
                     </Flicking>
                 </div>
