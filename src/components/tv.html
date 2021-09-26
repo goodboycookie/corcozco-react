@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TV</title>
+	
+	<script type="text/javascript" src="libraries/p5.js"></script>
+	<style>
+		@font-face { font-family: VCR; src: url('fonts/VCR_OSD_MONO_1.001.ttf'); }
+		#captiontext{
+			
+			
+			font-family: VCR;
+			text-align: center;
+			font-size: 30px;
+			color: white;
+			
+		}
+		#undertext{
+			
+			font-family: VCR;
+			text-align: center;
+			margin-bottom: 50px;
+			font-size: 24px;
+			color: white;
+		}
+		.image{
+			transform: translate(-50%, -50%);
+			margin: 0px;
+		}
+
+		.undergif{
+			z-index: 1;
+			position: absolute;
+			top:49%; left:48%;
+			height: 415px;
+			width: 540px;
+		}
+		#television{
+			height: 500px;
+			position: absolute;
+			z-index: 2;
+			top:50%; left:50%;
+		}
+		body{
+			background-color: #160C78;
+		}	
+	</style>
+	<script>
+		var gifs = ["libraries/images/stickstotombslmao.gif", "libraries/images/whodoibepsd.gif", "libraries/images/charlieno.gif", "libraries/images/boomconvo.gif", "libraries/images/stickfriend_and_ball.gif", "libraries/images/trashbutbrash.gif"];
+		var captions = ["all i did growing up was use the internet n watch cartoons", "when i grew up i became internet n cartoons", "n cartoons dont really work as people", "and internet jokes are so corny.", "how do i *become* someone when u arent anyone?", "unless thats what the ppl want !!"];
+		var count = -1;
+		function setup(){
+			createCanvas(5, 5);
+			
+		}
+		function keyPressed(){
+			if (keyCode === 32){
+				count++;
+				if (count > 5){
+					count = 0;
+				}
+				document.getElementsByClassName("undergif")[0].src = "libraries/images/channel.gif";
+				setTimeout(function(){document.getElementsByClassName("undergif")[0].src = gifs[count];
+									 document.getElementById("captiontext").innerHTML = captions[count];}, 200);
+			}
+			
+		}
+		
+	</script>
+	
+</head>
+
+<body>
+	<div id="captiontext"></div>
+	<br style="line-height: 100px">
+	<div>
+		<img alt="tv" id="television" class="image" src="libraries/images/realtv.png">
+		<img alt="gif" class="image undergif" src="libraries/images/channel.gif">
+	</div>
+	<br style="line-height: 540px">
+	<div id="undertext">press SPACE to change the channel</div>
+	
+</body>
+</html>

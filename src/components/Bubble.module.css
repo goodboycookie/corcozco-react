@@ -1,0 +1,51 @@
+.bubbleStyle{
+    
+    border: 1px solid #000000;
+    display: inline;
+    font-size: 0px;
+    border-radius: 50%;
+    transition: 0.2s;
+    
+    position: relative;
+    text-align: center;
+    font-family: Fredoka One;
+    
+    z-index: 1;
+}
+.activatedBubble{
+    transition: 1s;
+    
+
+    
+    
+    width: 100%;
+    height: 100%;
+
+    border-radius: 0;
+
+    position: relative;
+    display: flex;
+    text-align: justify;
+    
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    
+    z-index: 4;
+}
+
+.bubbleStyle:hover{
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    transform: scale(1.2);
+    z-index: 5;
+
+}
+
+
+
+.innerStyle{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

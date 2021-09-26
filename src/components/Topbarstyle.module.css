@@ -1,0 +1,26 @@
+.Buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.Button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 15px 0;
+    font-size: 2.5rem;
+    border-radius: 50px;
+    border: 1px solid black;
+    background-color: white;
+    width: 30%;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.Button:hover{
+    background-color: pink;
+    color: white;
+}
